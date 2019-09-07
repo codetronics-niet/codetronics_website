@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+        <div class="row">
+        {% for event in events%}
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title" class="font-weight-bold">{{ event.title }}</h5>
+                <p class="card-text">{{ event.description }}</p>
+                <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+            </div>
+            </div>
+            <br/>
+        </div>
+        {% endfor %}
+        </div>
+{% endblock content %}
