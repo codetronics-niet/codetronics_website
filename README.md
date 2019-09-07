@@ -11,12 +11,8 @@
 # 2 Cloning forked repository  
 
     2.1 You will only need to do this once per repository. From your command line:  
-    ```
-    git clone https://github.com/codetronics-niet/codetronics_website.git    
-    ``` 
+    >**git clone https://github.com/codetronics-niet/codetronics_website.git**   
     2.2 It is also recommended to configure an upstream remote repository:
-    ```
-    cd codetronics_website  
-    git remote add upstream https://github.com/codetronics-niet/codetronics_website.git  
-    ```
+    >**cd codetronics_website**     
+    >**git remote add upstream https://github.com/codetronics-niet/codetronics_website.git**  
 
