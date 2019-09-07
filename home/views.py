@@ -1,5 +1,10 @@
-from django.shortcuts import render, HttpResponse
+from django.views.generic import TemplateView
 
 
-def index(request):
-    return HttpResponse("Hello world")
+class HomePageView(TemplateView):
+    """[summary]
+    Simple home page view
+    Arguments:
+        TemplateView {[type]} -- [description]
+    """
+    template_name = 'base.html'
