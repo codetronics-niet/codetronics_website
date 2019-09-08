@@ -2,7 +2,7 @@
 
 
 {% block content %}
-        <div class="row">
+        {% comment %} <div class="row">
         {% for event in events%}
         <div class="col-sm-6">
             <div class="card">
@@ -15,5 +15,16 @@
             <br/>
         </div>
         {% endfor %}
+        </div> {% endcomment %}
+        <br>
+        {% for event in events%}
+        <div class="card text-center">
+        <div class="card-body">
+        <h4 class="card-title">{{ event.title }}</h4>
+        <p class="card-text">{{ event.description }}</p>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
         </div>
+        </div>
+        <br>
+        {% endfor %}
 {% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="error">
+		{% if form.errors %}
+	          {{ form.non_field_errors }}
+	  {% endif %}
+</div>
+<br>
+<form method="POST">
+    {% csrf_token %}
+    {% comment %} <p type="Enter the Token:"><br><input name="token" class="myinp1" type="text" placeholder="Token" required></input></p><br> {% endcomment %}
+    <center><button class="btn btn-primary">Download CSV</button></center>
+</form>
+{% endblock content %}
+
