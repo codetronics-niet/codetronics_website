@@ -7,4 +7,4 @@ class HomePageView(TemplateView):
     Arguments:
         TemplateView {[type]} -- [description]
     """
-    template_name = 'base.html'
+    template_name = 'home.html'

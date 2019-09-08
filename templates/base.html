@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -9,6 +10,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="https://kit.fontawesome.com/8ab3072a6a.js"></script>
   <title>CodeTronics</title>
   <style type="text/css">
@@ -23,35 +25,33 @@
   </style>
 </head>
 
-<body>
-  <div class="container">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top " style="background-color:#e3f2fd;" id="mainNav">
-      <div class="container"><a class="navbar-brand" href="#page-top">CodeTronics</a><button data-toggle="collapse"
-          data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button"
-          data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
-          aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="nav navbar-nav ml-auto text-uppercase">
-            <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
-                href="{% url 'homepage' %}">Home</a>
-            </li>
-            <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
-                href="{% url 'tech_events' %}">Events</a>
-            </li>
-            <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+<body class="Site">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top " style="background-color:#e3f2fd;" id="mainNav">
+    <div class="container"><a class="navbar-brand" href="#page-top">CodeTronics</a><button data-toggle="collapse"
+        data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
+          class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto text-uppercase">
+          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+              href="{% url 'homepage' %}">Home</a>
+          </li>
+          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
+              href="{% url 'tech_events' %}">Events</a>
+          </li>
+          <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a> -->
-            </li>
-          </ul>
-        </div>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <hr>
-    <br>
-    <div>
-      {% block content %}
-      {% endblock content %}
     </div>
+  </nav>
+  <hr>
+  <br>
+  <div>
+    {% block content %}
+    {% endblock content %}
   </div>
 
   <!-- Optional JavaScript -->
