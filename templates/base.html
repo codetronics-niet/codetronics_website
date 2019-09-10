@@ -10,23 +10,47 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="https://kit.fontawesome.com/8ab3072a6a.js"></script>
   <title>CodeTronics</title>
-  <style type="text/css">
-    .myform {
-      max-width: 540px;
-      margin: 0 auto;
-    }
-
-    .btn {
-      min-width: 150px;
-    }
-  </style>
 </head>
 
-<body class="Site">
-  <nav class="navbar navbar-light navbar-expand-lg fixed-top " style="background-color:#e3f2fd;" id="mainNav">
+<body>
+  <nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark py-0 fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CodeTronics</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinks"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'homepage'%}">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'register'%}">Register<span class="sr-only">(current)</span></a>
+          </li>
+          <li id="events" class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Events
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'tech_events'%}">Electronics</a>
+              <a class="dropdown-item" href="{% url 'tech_events'%}">Coding</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'tech_events'%}">All</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <!-- <nav class="navbar navbar-light navbar-expand-lg fixed-top " style="background-color:#e3f2fd;"
+    id="mainNav">
     <div class="container"><a class="navbar-brand" href="#page-top">CodeTronics</a><button data-toggle="collapse"
         data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
@@ -42,17 +66,13 @@
           <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a> -->
-          </li>
+  <!-- </li>
         </ul>
       </div>
     </div>
-  </nav>
-  <hr>
-  <br>
-  <div>
-    {% block content %}
-    {% endblock content %}
-  </div>
+  </nav> -->
+  {% block content %}
+  {% endblock content %}
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -65,6 +85,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+  <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>
