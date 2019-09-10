@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 
 
 class TimeStampedModel(models.Model):
@@ -15,14 +16,14 @@ class TimeStampedModel(models.Model):
 
 
 class Event(TimeStampedModel):
-    title = models.CharField(max_length=200, null=True)
-    description = models.TextField(null=True)
+    title = models.CharField(max_length=200, blank=False)
+    description = models.TextField()
 
     def __str__(self):
         return self.title[:50]
 
 
-class EventRegister(TimeStampedModel):
+class EventParticipant(TimeStampedModel):
     ELECTRONICS = 'ECE'
     COMPUTER_SCIENCE = 'CSE'
     IT = 'IT'
@@ -40,10 +41,10 @@ class EventRegister(TimeStampedModel):
         (BIOTECH, 'Biotech'),
     ]
     title = models.ForeignKey(Event, on_delete=models.CASCADE)
-    student_name = models.CharField(max_length=50)
-    email_id = models.EmailField()
-    mobile_number = models.IntegerField()
-    roll_no = models.IntegerField()
+    student_name = models.CharField(max_length=50, blank=False)
+    email_id = models.EmailField(blank=False, unique=True)
+    mobile_number = models.CharField(max_length=10, blank=False)
+    roll_no = models.CharField(max_length=10, blank=False)
     branch = models.CharField(
         max_length=3,
         choices=BRANCH_CHOICES,
@@ -52,6 +53,3 @@ class EventRegister(TimeStampedModel):
 
     def __str__(self):
         return self.student_name
-
-    def get_absolute_url(self):
-        return reverse_lazy("homepage")

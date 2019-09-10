@@ -1,8 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
-from .models import Event, EventRegister
+from .models import Event, EventParticipant
+from .forms import ParticipantForm
 import csv
 
 
@@ -12,11 +13,16 @@ class EventsList(ListView):
     context_object_name = 'events'
 
 
-class EventRegisterView(CreateView):
-    model = EventRegister
-    template_name = 'event_register.html'
-    fields = ['title', 'student_name', 'email_id',
-              'mobile_number', 'roll_no', 'branch']
+def register(request):
+    if request.method == 'POST':
+        form = ParticipantForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Thank you for registering yourself')
+            return redirect('homepage')
+    else:
+        form = ParticipantForm()
+    return render(request, 'event_register.html', {'form': form})
 
 
 def export_to_csv(request):
@@ -29,8 +35,8 @@ def export_to_csv(request):
 
             writer.writerow(['student_name', 'email_id',
                              'mobile_number', 'roll_no', 'branch'])
-            participants = EventRegister.objects.all().values_list('student_name', 'email_id',
-                                                                   'mobile_number', 'roll_no', 'branch')
+            participants = EventParticipant.objects.all().values_list('student_name', 'email_id',
+                                                                      'mobile_number', 'roll_no', 'branch')
             for participant in participants:
                 writer.writerow(participant)
             return response
