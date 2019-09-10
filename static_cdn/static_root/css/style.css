@@ -1,0 +1,144 @@
+body {
+    background: #192024;
+    font-family: "nunito", sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+#mainNavbar .navbar-brand {
+    color: #00e676;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+#mainNavbar {
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #f06292;
+}
+
+.dropdown-menu {
+    background: #192024;
+}
+
+.dropdown-item {
+    color: #00e676;
+}
+
+.bg {
+    background: url(https://www.wallpaperup.com/uploads/wallpapers/2014/03/17/300406/b936d6bbf0b58d6a2ad84312aeda868c-1000.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+#content {
+    color: #ffffff;
+    text-align: center;
+    padding-top: 14rem;
+}
+
+#banner h1 {
+    font-weight: 700;
+    font-size: 3.5em;
+}
+
+#banner h3 {
+    color: #00e676;
+    padding-top: 0.8rem;
+    font-weight: 600;
+    font-size: 2.8rem;
+}
+
+#content a {
+    color: #ffffff;
+    font-size: 1.6rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+#banner a {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+#about {
+    color: antiquewhite;
+    padding-top: 2.1rem;
+}
+
+#headingGroup h2 {
+    color: #00e676;
+    padding-top: 3.5rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+#ques1 h3,
+#mis h3,
+#vis h3,
+#ques2 h3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    color: #f06292;
+}
+
+#who b,
+#misvis b {
+    color: #00e676;
+}
+
+.section-title-divider {
+    width: 50px;
+    height: 3px;
+    background: #03C4EB;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+}
+
+.navbar.scrolled {
+    background: rgb(68, 68, 68);
+    /* IE */
+    background: rgba(0, 0, 0, 0.78);
+    /* NON-IE */
+}
+
+#icons i {
+    color: #00e676;
+    font-size: 2.8rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1rem;
+}
+
+.myform {
+    max-width: 540px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.card-body {
+    color: #ffffff;
+}
+
+.btn {
+    min-width: 150px;
+    color: #ffffff;
+}
