@@ -15,7 +15,7 @@ class TimeStampedModel(models.Model):
 
 
 class Event(TimeStampedModel):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
     description = models.TextField()
 
     def __str__(self):
