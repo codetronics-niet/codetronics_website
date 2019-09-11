@@ -142,3 +142,8 @@ html {
     min-width: 150px;
     color: #ffffff;
 }
+
+.message {
+    color: #ffffff;
+    padding-top: 4rem;
+}
