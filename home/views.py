@@ -1,10 +1,7 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from django.contrib import messages
 
 
-class HomePageView(TemplateView):
-    """[summary]
-    Simple home page view
-    Arguments:
-        TemplateView {[type]} -- [description]
-    """
-    template_name = 'home.html'
+def homepage(request):
+    message = messages.get_messages(request)
+    return render(request, 'home.html', {'message': message})
