@@ -113,9 +113,9 @@ html {
 }
 
 .navbar.scrolled {
-    background: rgb(68, 68, 68);
+    background: rgb(33, 33, 33);
     /* IE */
-    background: rgba(0, 0, 0, 0.78);
+    background: rgba(25, 32, 36, 0.95);
     /* NON-IE */
 }
 
@@ -146,6 +146,25 @@ html {
 .message {
     color: #ffffff;
     padding-top: 4rem;
+}
+
+#contact {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    padding-left: 8rem;
+}
+
+#contact .card {
+    font-size: 1rem;
+    background: #192024;
+    color: antiquewhite;
+}
+
+.card i {
+    padding-left: 0.2rem;
+    padding-right: 0.1rem;
+    font-size: 1.5rem;
+    color: aqua;
 }
 
 #footer {
