@@ -43,13 +43,13 @@ html {
     color: #ffffff;
     text-align: center;
     justify-content: center;
-    padding-top: 5vw;
+    padding-top: 5.5vw;
     vertical-align: middle;
 }
 
 #banner h1 {
     font-weight: 700;
-    font-size: 3.5em;
+    font-size: 3.5rem;
 }
 
 #banner h3 {
@@ -155,14 +155,14 @@ html {
 }
 
 .card-text {
-    color: #f06292;
+    color: #00e676;
 }
 
 #contact i {
     padding-left: 0.2rem;
     padding-right: 0.1rem;
     font-size: 1.5rem;
-    color: #03C4EB;
+    color: #f06292;
 }
 
 #footer {
