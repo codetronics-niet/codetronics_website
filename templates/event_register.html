@@ -9,12 +9,11 @@
         <br>
         <div class='myform'>
             <center><h1>Register</h1></center>
-            <form action="" method="POST">
-            {% csrf_token %}
-            {% bootstrap_form form%}
-            {% buttons %}
-                <button type="submit" class="btn btn-primary">Register</button>
-            {% endbuttons %}
+            <form action="" method="POST">{% csrf_token %}
+                {% bootstrap_form form%}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">Register</button>
+                {% endbuttons %}
             </form>
         {% comment %} </div> {% endcomment %}
     </div>
