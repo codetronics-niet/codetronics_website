@@ -41,7 +41,7 @@ class EventParticipant(TimeStampedModel):
         (BIOTECH, 'Biotech'),
     ]
     title = models.ForeignKey(Event, on_delete=models.CASCADE)
-    student_name = models.CharField(max_length=50, blank=False)
+    student_name = models.CharField(max_length=50, blank=True)
     email_id = models.EmailField(blank=False)
     mobile_number = models.CharField(max_length=10, blank=False)
     roll_no = models.CharField(max_length=10, blank=False)
