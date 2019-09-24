@@ -42,9 +42,9 @@ class EventParticipant(TimeStampedModel):
     ]
     title = models.ForeignKey(Event, on_delete=models.CASCADE)
     student_name = models.CharField(max_length=50, blank=False)
-    email_id = models.EmailField(blank=False, unique=True)
-    mobile_number = models.CharField(max_length=10, blank=False, unique=True)
-    roll_no = models.CharField(max_length=10, blank=False, unique=True)
+    email_id = models.EmailField(blank=False)
+    mobile_number = models.CharField(max_length=10, blank=False)
+    roll_no = models.CharField(max_length=10, blank=False)
     branch = models.CharField(
         max_length=3,
         choices=BRANCH_CHOICES,
