@@ -76,6 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+ADMINS = [('Sumit', 'sumit.singh4613@gmail.com')]
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
