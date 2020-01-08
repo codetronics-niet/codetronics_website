@@ -3,9 +3,21 @@
 <html lang="en">
 
 <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149351956-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-149351956-1');
+</script>
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-site-verification" content="uKAe8WEbXHxEd1_4ooyU67UFT27_WG4JtPGl3EezbCE" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,9 +30,9 @@
 </head>
 
 <body>
-  <nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark py-0 fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">CodeTronics</a>
+  <nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark py-0 static-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'homepage'%}">CodeTronics</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinks"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,19 +44,13 @@
             <a class="nav-link" href="{% url 'homepage'%}">Home</a>
           </li>
           <li class="nav-item active">
+            <a class="nav-link" href="{% url 'blog-home'%}">Blog<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
             <a class="nav-link" href="{% url 'register'%}">Register<span class="sr-only">(current)</span></a>
           </li>
-          <li id="events" class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Events
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'tech_events'%}">Electronics</a>
-              <a class="dropdown-item" href="{% url 'tech_events'%}">Coding</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'tech_events'%}">All</a>
-            </div>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'tech_events'%}">Events<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>

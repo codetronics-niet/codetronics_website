@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from events.views import export_to_csv
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('downloads/', export_to_csv, name='csv_file'),
     path('events/', include('events.urls')),
+    path('blog/', include("blog.urls")),
+    re_path(r'^markdownx/', include('markdownx.urls')),
 
 ]

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container col-md-10 mt-4 text-center">
+      <h2>Blog Posts</h2>
+      <hr/>
+    </div>
+    {%  for post in posts %}
+    <div class="row animated fadeInUp">
+          <!-- Grid column -->
+          <div class="card-body col-lg-7 col-xl-8">
+              <!-- Post title -->
+              <h4 class="font-weight-bold mb-3"><strong><a href="{% url 'post-detail' post.id%}">{{ post.title }}</a></strong></h4>
+              <p class="dark-grey-text">{{ post.content|slice:"0:250"}}...</p>
+              <!-- Post data -->
+              <p>by <a class="font-weight-bold" href="#">{{ post.author }}</a>, {{ post.date_posted|date:"F d, Y" }}</p>
+              <!-- Read more button -->
+              <a class="btn btn-primary" href="{% url 'post-detail' post.id%}">Read More</a>
+              <hr/>
+          </div>
+    </div>  
+    {% endfor %}
+    <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+    {% if is_paginated %}
+          {% if page_obj.has_previous %}
+            <a class="btn btn-primary" href="?page=1"><i class="fas fa-angle-double-left mr-1"></i>First</a>
+            <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-left mr-1"></i>Prev</a>
+          {% endif %}
+        </div>  
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+          {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+              <a class="btn btn-primary" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+              <a class="btn btn-primary" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}  
+          {% endfor %}
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Third group">
+          {% if page_obj.has_next %}
+            <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">Next<i class="fas fa-angle-right ml-1"></i></a>
+            <a class="btn btn-primary" href="?page={{ page_obj.paginator.num_pages }}">Last<i class="fas fa-angle-double-right ml-1"></i></a>
+          {% endif %}
+        </div>  
+    {% endif %}
+        </div>  
+    </div>
+{% endblock content %}    

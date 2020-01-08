@@ -40,10 +40,12 @@ INSTALLED_APPS = [
 
     # third party apps
     'bootstrap4',
+    'markdownx',
 
     # my apps
     'home.apps.HomeConfig',
     'events.apps.EventsConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+ADMINS = [('Sumit', 'sumit.singh4613@gmail.com')]
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

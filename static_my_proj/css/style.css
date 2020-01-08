@@ -39,15 +39,17 @@ html {
     height: 100%;
 }
 
-#content {
+#banner {
     color: #ffffff;
     text-align: center;
-    padding-top: 14rem;
+    justify-content: center;
+    padding-top: 5.5vw;
+    vertical-align: middle;
 }
 
 #banner h1 {
     font-weight: 700;
-    font-size: 3.5em;
+    font-size: 3.5rem;
 }
 
 #banner h3 {
@@ -76,7 +78,7 @@ html {
 
 #headingGroup h2 {
     color: #00e676;
-    padding-top: 3.5rem;
+    padding-top: 3rem;
     font-size: 3.5rem;
     font-weight: 600;
 }
@@ -101,22 +103,7 @@ html {
     height: 3px;
     background: #03C4EB;
     margin: 0 auto;
-    margin-bottom: 20px;
-}
-
-.navbar {
-    -webkit-transition: all 0.6s ease-out;
-    -moz-transition: all 0.6s ease-out;
-    -o-transition: all 0.6s ease-out;
-    -ms-transition: all 0.6s ease-out;
-    transition: all 0.6s ease-out;
-}
-
-.navbar.scrolled {
-    background: rgb(68, 68, 68);
-    /* IE */
-    background: rgba(0, 0, 0, 0.78);
-    /* NON-IE */
+    margin-bottom: 0.5rem;
 }
 
 #icons i {
@@ -125,7 +112,7 @@ html {
     padding-left: 0.8rem;
     padding-right: 0.8rem;
     padding-top: 1.6rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
 }
 
 .myform {
@@ -145,5 +132,44 @@ html {
 
 .message {
     color: #ffffff;
-    padding-top: 4rem;
+    padding-top: 4vw;
+}
+
+#contact {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    color: antiquewhite;
+    background: url(https://media.idownloadblog.com/wp-content/uploads/2016/08/3840x2160_night.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#contact .section-title-divider {
+    width: 50px;
+    height: 3px;
+    background: #03C4EB;
+    margin: 0 auto;
+    margin-bottom: 0.8rem;
+}
+
+.card-text {
+    color: #00e676;
+}
+
+#contact i {
+    padding-left: 0.2rem;
+    padding-right: 0.1rem;
+    font-size: 1.5rem;
+    color: #f06292;
+}
+
+#footer {
+    padding-top: 1.5rem;
+    color: #ffffff;
+}
+
+.blog-text {
+    color: #000000;
 }

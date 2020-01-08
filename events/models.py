@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
+from markdownx.models import MarkdownxField
 
 
 class TimeStampedModel(models.Model):
@@ -17,7 +18,7 @@ class TimeStampedModel(models.Model):
 
 class Event(TimeStampedModel):
     title = models.CharField(max_length=200, blank=False)
-    description = models.TextField()
+    description = MarkdownxField()
 
     def __str__(self):
         return self.title[:50]
@@ -42,9 +43,9 @@ class EventParticipant(TimeStampedModel):
     ]
     title = models.ForeignKey(Event, on_delete=models.CASCADE)
     student_name = models.CharField(max_length=50, blank=False)
-    email_id = models.EmailField(blank=False, unique=True)
-    mobile_number = models.CharField(max_length=10, blank=False, unique=True)
-    roll_no = models.CharField(max_length=10, blank=False, unique=True)
+    email_id = models.EmailField(blank=False)
+    mobile_number = models.CharField(max_length=10, blank=False)
+    roll_no = models.CharField(max_length=10, blank=False)
     branch = models.CharField(
         max_length=3,
         choices=BRANCH_CHOICES,

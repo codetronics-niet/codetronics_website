@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="card text-center">
+            <div class="card-text">
+              <h2>{{ object.title }}</h2>
+              <div>
+                <a class="mr-2" href="#">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+              </div>
+              <hr/>
+              <div class="row">
+                  <div class="col-lg-7 col-xl-8">
+                      <center><p class="blog-text"><i class="fas fa-quote-left text-dark"></i>{{ object.content }}<i class="fas fa-quote-right text-dark ml-2"></i></p></center>
+                      <!-- Post data -->
+                      <hr/>
+                  </div>
+            </div> 
+            </div>
+        </div>
+{% endblock content %} 
