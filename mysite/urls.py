@@ -22,6 +22,5 @@ urlpatterns = [
     path('downloads/', export_to_csv, name='csv_file'),
     path('events/', include('events.urls')),
     path('blog/', include("blog.urls")),
-    re_path(r'^markdownx/', include('markdownx.urls')),
 
 ]
