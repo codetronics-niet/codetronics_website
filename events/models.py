@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
-from markdownx.models import MarkdownxField
 
 
 class TimeStampedModel(models.Model):
@@ -16,9 +15,9 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-class Event(TimeStampedModel):
+class Event(TimeStampedModel): 
     title = models.CharField(max_length=200, blank=False)
-    description = MarkdownxField()
+    description = models.TextField()
 
     def __str__(self):
         return self.title[:50]

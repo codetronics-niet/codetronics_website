@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     # third party apps
     'bootstrap4',
-    'markdownx',
 
     # my apps
     'home.apps.HomeConfig',
