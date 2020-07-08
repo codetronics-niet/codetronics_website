@@ -6,16 +6,27 @@
             <br>
             <div class="container">
             <br>
+            {% if events|length == 0 %}
+            <div class="card text-center">
+            <div class="card-body bg">
+            <h4 class="card-title">No Ongoing Events </h4>
+            <p class="card-text">Please review after sometime, to see latest ongoing Events!<br>THANK YOU!</p>
+            </div>
+            </div>
+            
+            {% endif %} 
             {% for event in events%}
             <div class="card text-center">
             <div class="card-body bg">
             <h4 class="card-title">{{ event.title }}</h4>
             <p class="card-text">{{ event.description | linebreaksbr }}</p>
-            <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+            <a href="{% url 'register' %}" class="btn btn-primary">Register for this Event</a>
             </div>
             </div>
             <br>
-            {% endfor %}    
+            {% endfor %} 
+            <br>
+            <center><a href="{% url 'requestEvent' %}" class="btn btn-primary">Request for any Event in your mind!</a></center>   
             </div>
         {% comment %} </div> {% endcomment %}
 {% endblock content %}
