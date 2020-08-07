@@ -13,8 +13,8 @@
             <p class="card-text">Please review after sometime, to see latest ongoing Events!<br>THANK YOU!</p>
             </div>
             </div>
-            
-            {% endif %} 
+
+            {% endif %}
             {% for event in events%}
             <div class="card text-center">
             <div class="card-body bg">
@@ -24,9 +24,9 @@
             </div>
             </div>
             <br>
-            {% endfor %} 
+            {% endfor %}
             <br>
-            <center><a href="{% url 'request_event' %}" class="btn btn-primary">Request for any Event in your mind!</a></center>   
+            <center><a href="{% url 'request_event' %}" class="btn btn-primary">Request for any Event in your mind!</a></center>
             </div>
         {% comment %} </div> {% endcomment %}
 {% endblock content %}
