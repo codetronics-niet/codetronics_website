@@ -1,6 +1,6 @@
 from django.db import models
-from django.urls import reverse_lazy
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
 
 
 class TimeStampedModel(models.Model):
@@ -8,6 +8,7 @@ class TimeStampedModel(models.Model):
     An abstract class model that provides self
     updating ``created`` and ``modified`` fields.
     """
+
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
@@ -15,7 +16,7 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-class Event(TimeStampedModel): 
+class Event(TimeStampedModel):
     title = models.CharField(max_length=200, blank=False)
     description = models.TextField()
 
@@ -24,21 +25,21 @@ class Event(TimeStampedModel):
 
 
 class EventParticipant(TimeStampedModel):
-    ELECTRONICS = 'ECE'
-    COMPUTER_SCIENCE = 'CSE'
-    IT = 'IT'
-    ELECTRICAL = 'EN'
-    MECHANICAL = 'ME'
-    CIVIL = 'CE'
-    BIOTECH = 'BT'
+    ELECTRONICS = "ECE"
+    COMPUTER_SCIENCE = "CSE"
+    IT = "IT"
+    ELECTRICAL = "EN"
+    MECHANICAL = "ME"
+    CIVIL = "CE"
+    BIOTECH = "BT"
     BRANCH_CHOICES = [
-        (ELECTRONICS, 'Electronics'),
-        (COMPUTER_SCIENCE, 'Computer Science'),
-        (IT, 'IT'),
-        (ELECTRICAL, 'Electrical'),
-        (MECHANICAL, 'Mechanical'),
-        (CIVIL, 'Civil'),
-        (BIOTECH, 'Biotech'),
+        (ELECTRONICS, "Electronics"),
+        (COMPUTER_SCIENCE, "Computer Science"),
+        (IT, "IT"),
+        (ELECTRICAL, "Electrical"),
+        (MECHANICAL, "Mechanical"),
+        (CIVIL, "Civil"),
+        (BIOTECH, "Biotech"),
     ]
     title = models.ForeignKey(Event, on_delete=models.CASCADE)
     student_name = models.CharField(max_length=50, blank=False)
@@ -53,3 +54,14 @@ class EventParticipant(TimeStampedModel):
 
     def __str__(self):
         return self.student_name
+
+
+class RequestEvent(models.Model):
+    title = models.CharField(max_length=50, blank=False)
+    description = models.TextField(blank=False)
+    your_name = models.CharField(max_length=50, blank=False)
+    roll_no = models.CharField(max_length=15, blank=False)
+    contact = models.CharField(max_length=10, blank=False)
+
+    def __str__(self):
+        return self.title
