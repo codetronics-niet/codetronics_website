@@ -6,20 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events', '0007_auto_20190924_1641'),
+        ("events", "0007_auto_20190924_1641"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='RequestEvent',
+            name="RequestEvent",
             fields=[
-                ('id', models.AutoField(auto_created=True,
-                                        primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=50)),
-                ('description', models.TextField()),
-                ('your_name', models.CharField(max_length=50)),
-                ('roll_no', models.CharField(max_length=15)),
-                ('contact', models.CharField(max_length=10)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=50)),
+                ("description", models.TextField()),
+                ("your_name", models.CharField(max_length=50)),
+                ("roll_no", models.CharField(max_length=15)),
+                ("contact", models.CharField(max_length=10)),
             ],
         ),
     ]
