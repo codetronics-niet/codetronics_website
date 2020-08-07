@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 
-from .models import EventParticipant, RequestEvent
+from .models import EventParticipant
+from .models import RequestEvent
 
 
 class ParticipantForm(ModelForm):
