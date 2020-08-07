@@ -2,16 +2,13 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from .models import Event, EventParticipant, requestEvent
-from .forms import ParticipantForm, requestEventForm
+from .models import Event, EventParticipant, RequestEvent
+from .forms import ParticipantForm, RequestEventForm
 import csv
 
 
 def events(request):
     events = Event.objects.all()
-    #numberOfEvents = len(events)
-    #if (numberOfEvents) == 0:
-       # events = 0
     return render(request, 'events.html', {'events': events })
 
 
@@ -49,9 +46,9 @@ def export_to_csv(request):
             return render(request, 'download.html', {'error': error})
     return render(request, 'download.html')
     
-def requestEvent(request):
+def request_event(request):
     if request.method == 'POST':
-        form = requestEventForm(request.POST)
+        form = RequestEventForm(request.POST)
         if form.is_valid():
             form.save()
             your_name = form.cleaned_data.get('your_name')
@@ -60,5 +57,5 @@ def requestEvent(request):
                 request, f'Thank you { your_name } for requesting to organise { title }, you will be contacted shortly!')
             return redirect('homepage')
     else:
-        form = requestEventForm()
+        form = RequestEventForm()
     return render(request, 'event_register.html', {'form': form})

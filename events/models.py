@@ -54,7 +54,8 @@ class EventParticipant(TimeStampedModel):
     def __str__(self):
         return self.student_name
         
-class requestEvent(models.Model):
+
+class RequestEvent(models.Model):
     title = models.CharField(max_length=50, blank=False)
     description = models.TextField(blank=False)
     your_name = models.CharField(max_length=50, blank=False)

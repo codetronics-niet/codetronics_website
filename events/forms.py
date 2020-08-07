@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import EventParticipant, requestEvent
+from .models import EventParticipant, RequestEvent
 
 
 class ParticipantForm(ModelForm):
@@ -8,7 +8,7 @@ class ParticipantForm(ModelForm):
         fields = ['title', 'student_name',
                   'email_id', 'mobile_number', 'roll_no', 'branch']
 
-class requestEventForm(ModelForm):
+class RequestEventForm(ModelForm):
     class Meta:
-        model = requestEvent
+        model = RequestEvent
         fields = ['title', 'description', 'your_name','roll_no' ,'contact']
