@@ -2,14 +2,14 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from .models import Event, EventParticipant
-from .forms import ParticipantForm
+from .models import Event, EventParticipant, RequestEvent
+from .forms import ParticipantForm, RequestEventForm
 import csv
 
 
 def events(request):
-    events = Event.objects.all
-    return render(request, 'events.html', {'events': events})
+    events = Event.objects.all()
+    return render(request, 'events.html', {'events': events })
 
 
 def register(request):
@@ -45,3 +45,17 @@ def export_to_csv(request):
             error = "Please Enter a Valid Token"
             return render(request, 'download.html', {'error': error})
     return render(request, 'download.html')
+    
+def request_event(request):
+    if request.method == 'POST':
+        form = RequestEventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            your_name = form.cleaned_data.get('your_name')
+            title = form.cleaned_data.get('title')
+            messages.success(
+                request, f'Thank you { your_name } for requesting to organise { title }, you will be contacted shortly!')
+            return redirect('homepage')
+    else:
+        form = RequestEventForm()
+    return render(request, 'event_register.html', {'form': form})
