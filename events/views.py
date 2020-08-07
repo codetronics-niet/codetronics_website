@@ -39,19 +39,18 @@ def export_to_csv(request):
         token = request.POST.get("token")
         if token == "codeTronics":
             response = HttpResponse(content_type="text/csv")
-            response["Content-Disposition"] = "attachment; filename=participants.csv"
+            response[
+                "Content-Disposition"] = "attachment; filename=participants.csv"
             writer = csv.writer(response)
 
-            writer.writerow(
-                [
-                    "title",
-                    "student_name",
-                    "email_id",
-                    "mobile_number",
-                    "roll_no",
-                    "branch",
-                ]
-            )
+            writer.writerow([
+                "title",
+                "student_name",
+                "email_id",
+                "mobile_number",
+                "roll_no",
+                "branch",
+            ])
             participants = EventParticipant.objects.all().values_list(
                 "title__title",
                 "student_name",

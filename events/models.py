@@ -47,7 +47,9 @@ class EventParticipant(TimeStampedModel):
     mobile_number = models.CharField(max_length=10, blank=False)
     roll_no = models.CharField(max_length=10, blank=False)
     branch = models.CharField(
-        max_length=3, choices=BRANCH_CHOICES, default=ELECTRONICS,
+        max_length=3,
+        choices=BRANCH_CHOICES,
+        default=ELECTRONICS,
     )
 
     def __str__(self):
