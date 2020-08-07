@@ -1,6 +1,6 @@
 from django.db import models
-from django.urls import reverse_lazy
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
 
 
 class TimeStampedModel(models.Model):

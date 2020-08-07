@@ -1,10 +1,12 @@
-from django.http import HttpResponse
-from django.contrib import messages
-from django.shortcuts import render, redirect
-from django.views.generic import ListView
-from .models import Event, EventParticipant, RequestEvent
-from .forms import ParticipantForm, RequestEventForm
 import csv
+
+from django.contrib import messages
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
+from django.views.generic import ListView
+
+from .forms import ParticipantForm, RequestEventForm
+from .models import Event, EventParticipant, RequestEvent
 
 
 def events(request):
