@@ -9,7 +9,7 @@ import csv
 
 def events(request):
     events = Event.objects.all()
-    return render(request, 'events.html', {'events': events })
+    return render(request, 'events.html', {'events': events})
 
 
 def register(request):
@@ -45,7 +45,8 @@ def export_to_csv(request):
             error = "Please Enter a Valid Token"
             return render(request, 'download.html', {'error': error})
     return render(request, 'download.html')
-    
+
+
 def request_event(request):
     if request.method == 'POST':
         form = RequestEventForm(request.POST)

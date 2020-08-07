@@ -15,7 +15,7 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-class Event(TimeStampedModel): 
+class Event(TimeStampedModel):
     title = models.CharField(max_length=200, blank=False)
     description = models.TextField()
 
@@ -53,7 +53,7 @@ class EventParticipant(TimeStampedModel):
 
     def __str__(self):
         return self.student_name
-        
+
 
 class RequestEvent(models.Model):
     title = models.CharField(max_length=50, blank=False)
@@ -61,6 +61,6 @@ class RequestEvent(models.Model):
     your_name = models.CharField(max_length=50, blank=False)
     roll_no = models.CharField(max_length=15, blank=False)
     contact = models.CharField(max_length=10, blank=False)
-    
+
     def __str__(self):
         return self.title

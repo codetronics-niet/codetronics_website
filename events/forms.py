@@ -8,7 +8,8 @@ class ParticipantForm(ModelForm):
         fields = ['title', 'student_name',
                   'email_id', 'mobile_number', 'roll_no', 'branch']
 
+
 class RequestEventForm(ModelForm):
     class Meta:
         model = RequestEvent
-        fields = ['title', 'description', 'your_name','roll_no' ,'contact']
+        fields = ['title', 'description', 'your_name', 'roll_no', 'contact']
